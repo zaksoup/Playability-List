@@ -1,6 +1,6 @@
 <?php
 
-	$dbConnection = new Mongo("mongodb://zaksoup:m545b;FedorA@flame.mongohq.com:27097/playability");
+	$dbConnection = new Mongo("mongodb://zaksoup:[sekretpassword]@flame.mongohq.com:27097/playability");
 	
 	$users = $dbConnection->playability->users->find();
 	
@@ -21,7 +21,7 @@
 	{
 		
 		
-		$salt = 'voDeaFWckErOPPGwiapYBwEoc4O2d1M60m2QsYc7A15PUshrLafkljzilLILIDFlIJSFildidjLIDSjsdmoVioG1wUmEgF';
+		$salt = '';
 	    
 	    global $dbConnection;
 	    $findusers = $dbConnection->playability->users->find(array('name'=>new MongoRegex('/^'.$username.'$/i')));
@@ -84,7 +84,7 @@
 		
 		global $code;
 		
-	    $salt = 'voDeaFWckErOPPGwiapYBwEoc4O2d1M60m2QsYc7A15PUshrLafkljzilLILIDFlIJSFildidjLIDSjsdmoVioG1wUmEgF';
+	    $salt = '';
 	
 	    $username = preg_replace('/\r|\n|\:/', '', $username);
 	
