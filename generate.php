@@ -6,7 +6,7 @@ if(!$_SESSION['username']=='Zaksoup'){
 	header('Location: signin');
 };
 
-$dbConnection = new Mongo("mongodb://zaksoup:m545b;FedorA@flame.mongohq.com:27097/playability");
+$dbConnection = new Mongo("mongodb://zaksoup:[SekretPassword]@flame.mongohq.com:27097/playability");
 
 $codes = $dbConnection->playability->codes->find();
 
