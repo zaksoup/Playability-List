@@ -1,0 +1,202 @@
+/* @group defaults */
+
+*
+{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+body
+{
+	font: 13px/18px sans-serif;
+	color: #333;
+	background-color: #fff;
+	padding: 16px;
+}
+
+a
+{
+	text-decoration: none;
+	font-weight: bold;
+	color: inherit;
+}
+
+a.editLink {
+	position: absolute;
+	float: left;
+	top: 3px;
+	left: 3px;
+}
+
+a:hover 
+{
+	color: #333;
+}
+
+div
+{
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 16px;
+	width: 25%;
+	float: left;
+}
+
+h1
+{
+	margin: 0 0 16px;
+	padding: 0 0 16px;
+	border-bottom: 4px solid #333;
+}
+
+p
+{
+	margin: 0 0 16px;
+}
+
+li
+{
+	list-style: none;
+	padding: 0 0 0 16px;
+	position: relative;
+}
+
+li:before
+{
+	display: block;
+	content: '-';
+	font-weight: bold;
+	position: absolute;
+	top: -2px;
+	left: 0;
+	font-size: 24px;
+}
+
+span.deleteButton {
+	cursor: pointer;
+	color: #333;
+	display: none;
+}
+
+span
+{
+	color: #999;
+	font-size: 9px;
+}
+
+.login {
+	float: right;
+	position: absolute;
+	top: 3px;
+	right: 3px;
+}
+
+#footer
+{
+	margin: 16px 16px 0;
+	padding: 16px 0 0;
+	border-top: 1px solid #333;
+	float: none;
+	clear: both;
+	width: auto;
+}
+
+h1>span {
+	color: inherit;
+	font-size: inherit;
+	float: right;
+}
+
+span + span
+{
+	font-size: 11px;
+	line-height: 13px;
+	display: block;
+	position: relative;
+	top: -2px;
+}
+
+/* iPhone [portrait + landscape] */
+@media only screen and (max-device-width: 480px)
+{
+	body
+	{
+		padding: 0;
+	}
+	div
+	{
+		width: 320px;
+		clear: both;
+	}
+	#footer
+	{
+		margin: 16px;
+	}
+}
+
+/* @end defaults */
+
+/* @group Forms */
+
+form.add {
+	display: none;
+	height: 74px;
+}
+
+form.remove {
+	display: inline;
+}
+
+form input[name=category] {
+display:none;
+}
+
+
+form input[type=text], form textarea {
+	width: 129px;
+	outline: none;
+	border: 2px solid #7c7c7c;
+}
+
+form textarea {
+	margin-top: 3px;
+	width: 266px;
+	resize: none;
+}
+
+input[type=submit] {
+	font-weight: bold;
+	background: none;
+}
+
+input[type=submit]:hover {
+	cursor: pointer;
+}
+
+/* @end */
+
+/* @group about */
+
+#content {
+	width: 50%;
+}
+
+#right {
+	width: 25%;
+}
+
+#right>h1>span {
+	font-weight: normal;
+	font-style: normal;
+	font-size: 20px;
+}
+
+
+
+/* @end */
+
+

@@ -1,0 +1,234 @@
+/* @group reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* @end */
+
+body#login {
+	background-color: #ca2f95;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+section#box {
+	width: 382px;
+	margin: 60px auto auto;
+	background-color: #FFFEFF;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFEFF), to(#FFEDFB));
+	background-image: -webkit-linear-gradient(top, #FFFEFF, #FFEDFB);
+	background-image: -moz-linear-gradient(top, #FFFEFF, #FFEDFB);
+	background-image: -ms-linear-gradient(top, #FFFEFF, #FFEDFB);
+	background-image: -o-linear-gradient(top, #FFFEFF, #FFEDFB);
+	background-image: linear-gradient(top, #FFFEFF, #FFEDFB);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFFEFF', EndColorStr='#FFEDFB');
+	-moz-box-shadow: 0px 1px 3px #000;
+	-webkit-box-shadow: 0px 1px 3px #000;
+	box-shadow: 0px 1px 3px #000;
+	padding: 25px 0 0 0;
+}
+
+h1 {
+	text-indent: -9999px;
+	background: url(images/logo.png) no-repeat;
+	width: 308px;
+	height: 52px;
+	margin: 0 auto auto;
+}
+
+div#signin {
+	padding-left: 20px;
+	padding-bottom: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	width: 300px;
+	background-color: #fffeff;
+	margin: 20px auto auto;
+	border: 1px solid #ebd4e5;
+	background-color: #FFFAFE;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFAFE), to(#FFFFFF));
+	background-image: -webkit-linear-gradient(top, #FFFAFE, #FFFFFF);
+	background-image: -moz-linear-gradient(top, #FFFAFE, #FFFFFF);
+	background-image: -ms-linear-gradient(top, #FFFAFE, #FFFFFF);
+	background-image: -o-linear-gradient(top, #FFFAFE, #FFFFFF);
+	background-image: linear-gradient(top, #FFFAFE, #FFFFFF);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFFAFE', EndColorStr='#FFFFFF');
+}
+
+div#signup {
+	padding-left: 20px;
+	padding-bottom: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	display: none;
+	width: 300px;
+	background-color: #fffeff;
+	margin: 20px auto auto;
+	border: 1px solid #ebd4e5;
+	background-color: #FFFAFE;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFAFE), to(#FFFFFF));
+	background-image: -webkit-linear-gradient(top, #FFFAFE, #FFFFFF);
+	background-image: -moz-linear-gradient(top, #FFFAFE, #FFFFFF);
+	background-image: -ms-linear-gradient(top, #FFFAFE, #FFFFFF);
+	background-image: -o-linear-gradient(top, #FFFAFE, #FFFFFF);
+	background-image: linear-gradient(top, #FFFAFE, #FFFFFF);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFFAFE', EndColorStr='#FFFFFF');
+}
+
+form.signin, form.signup {
+	margin-bottom: 5px;
+	font-size: 12px;
+	color: #b94f94;
+	margin-left: 0;
+}
+
+form.signin label, form.signup label {
+	margin-bottom: 10px;
+	display: block;
+}
+
+form.signin input, form.signup input {
+	outline: none;
+	background: #fff none;
+	border: 1px solid #ebd2e5;
+	width: 296px;
+	height: 24px;
+	border-radius:3px;
+	margin-bottom: 10px;
+	-webkit-transition: border 80ms linear;
+	color: #671ce6;
+}
+
+form.signin input:focus, form.signup input:focus {
+	border: 1px solid #f3a1d6;
+}
+
+form.signin a.submit, form.signup a.submit {
+	margin-top: 10px;
+	display: block;
+	width: 93px;
+	height: 28px;
+	background-image: url(images/button.png);
+	color: white;
+	cursor: pointer;
+	float: left;
+}
+
+a.submit:active {
+	position: relative;
+	top: 1px;
+}
+
+form.signin a.submit span, form.signup a.submit span {
+	font-weight: bold;
+	position: relative;
+	top: 5px;
+	left: 30px;
+	font-size: 13px;
+}
+
+form.signup a.submit span {
+	font-weight: bold;
+	position: relative;
+	top: 5px;
+	left: 28px;
+	font-size: 13px;
+}
+
+span.signup_text {
+	display: block;
+	color: #ca2f95;
+	font-weight: bold;
+	font-size: 12px;
+	margin-top: 7px;
+	float: left;
+	margin-left: 28px;
+}
+
+a.signup_link {
+	color: #fa7dcb;
+	text-decoration: none;
+}
+
+a.signup_link:hover {
+	text-decoration: underline;
+}
+
+.clear {
+	clear: both;
+}
+
+span.bottom_text {
+	position: relative;
+	top: -2px;
+	color: #ca2f95;
+	font-size: 30px;
+	margin-left: 86px;
+}
+
+span.bottom_text a {
+	position: relative;
+	top: -6px;
+	color: #ca2f95;
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+span.bottom_text a:hover {
+	text-decoration: underline;
+}
+
+span.close {
+	display: none;
+	cursor: pointer;
+	width: 23px;
+	height: 23px;
+	background-image: url(images/close_button.png);
+	float: right;
+	text-indent: -9999px;
+	position: relative;
+	top: -28px;
+	left: 30px;
+}
