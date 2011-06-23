@@ -2,7 +2,7 @@
 
 	session_start();
 
-	$dbConnection = new Mongo("mongodb://zaksoup:m545b;FedorA@flame.mongohq.com:27097/playability");
+	$dbConnection = new Mongo("mongodb://zaksoup:[SekretPassword]@flame.mongohq.com:27097/playability");
 
 	//$dbConnection = new Mongo();
 	
