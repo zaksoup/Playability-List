@@ -4,7 +4,7 @@ $publicView = $_GET['public'];
 
 $publicView = new MongoRegex('/^'.$publicView.'$/i');
 
-$dbConnection = new Mongo("mongodb://zaksoup:[SekretPassword]@flame.mongohq.com:27097/playability");
+$dbConnection = new Mongo();
 //$dbConnection = new Mongo();
 
 $users = iterator_to_array($dbConnection->playability->users->find(array('name'=>$publicView)));

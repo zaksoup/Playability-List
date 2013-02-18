@@ -1,6 +1,6 @@
 <?php
 
-	$dbConnection = new Mongo("mongodb://zaksoup:[sekretpassword]@flame.mongohq.com:27097/playability");
+	$dbConnection = new Mongo();
 	
 	$users = $dbConnection->playability->users->find();
 	
@@ -21,7 +21,7 @@
 	{
 		
 		
-		$salt = '';
+		$salt  = 'abcdzak123';
 	    
 	    global $dbConnection;
 	    $findusers = $dbConnection->playability->users->find(array('name'=>new MongoRegex('/^'.$username.'$/i')));
@@ -84,7 +84,7 @@
 		
 		global $code;
 		
-	    $salt = '';
+	    $salt = 'abcdzak123';
 	
 	    $username = preg_replace('/\r|\n|\:/', '', $username);
 	

@@ -2,7 +2,7 @@
 
 	session_start();
 
-	$dbConnection = new Mongo("mongodb://zaksoup:[SekretPassword]@flame.mongohq.com:27097/playability");
+	$dbConnection = new Mongo();
 
 	//$dbConnection = new Mongo();
 	
@@ -17,7 +17,7 @@
 	$action = $_POST['action'];
 	
 
-	session_start();
+	//session_start();
 	
 	function getGames($type, $category) {
 	

@@ -2,18 +2,17 @@
 
 session_start();
 
-if(!$_SESSION['username']=='Zaksoup'){
+/*if(!$_SESSION['username']=='Zaksoup'){
 	header('Location: signin');
-};
+};*/
 
-$dbConnection = new Mongo("mongodb://zaksoup:[SekretPassword]@flame.mongohq.com:27097/playability");
+$dbConnection = new Mongo();
 
 $codes = $dbConnection->playability->codes->find();
 
 function genRandomString() {
 	
 	global $dbConnection;
-	
     $length = 10;
     $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
     $string = '';    
@@ -29,8 +28,8 @@ function genRandomString() {
 
 $dbConnection->playability->codes->remove(array('code' => 'abc'));
 
-if($_GET['generate']=='true')
-	genRandomString();
+//if($_GET['generate']=='true')
+	//genRandomString();
 
 foreach($codes as $code){
 
