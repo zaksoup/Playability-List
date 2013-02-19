@@ -2,16 +2,15 @@
 
 	$dbConnection = new Mongo();
 	
-	$users = $dbConnection->playability->users->find();
+	$users = $dbConnection->authtest->users->find();
 	
-	//$uidindex = $dbConnection->playability->uidindex->find();
+	$uidindex = $dbConnection->authtest->uidindex->find();
 	
 	$username = trim(stripslashes($_POST['user']));
 	$password = trim(stripslashes($_POST['pass']));
 	$email = trim(stripslashes($_POST['email']));
 	$code = trim(stripslashes($_POST['code']));
 	$action = trim(stripslashes($_POST['action']));
-	$first = $dbConnection->playability-> //add stuff for has been in stalled here
 		//echo $email;
 	
 	function isValidEmail($email){
@@ -19,40 +18,32 @@
 	}
 	
 	function authenticate($username, $password)
-	{ 
-		$salt  = 'abcdzak123';
+	{
+		
+		
+		$salt = 'voDeaFWckErOPPGwiapYBwEoc4O2d1M60m2QsYc7A15PUshrLafkljzilLILIDFlIJSFildidjLIDSjsdmoVioG1wUmEgF';
 	    
 	    global $dbConnection;
-	    $findusers = $dbConnection->playability->users->find(array('name'=>new MongoRegex('/^'.$username.'$/i')));
-	    if(isset($findusers)){
+	    global $users;
 	    
-		    foreach($findusers as $user){
-		    
-		    	if(strtolower($user["name"]) == strtolower($username) && $user["password"] == sha1($salt . $password)){
-		    	
-		    		session_start();
-		        	
-		        	$_SESSION['username'] = $user['name'];
-		        	$_SESSION['password'] = sha1($salt . $password);
-		        	
-		        	return true;
-		        	
-		        }else if(strtolower($user["name"]) == strtolower($username)){
-		        
-		        	echo "password ";
-		        	return false;
-		        }else{
-		        	echo "no user ";
-		        	return false;
-		        };
-		    };
-		    
-		}else{
-			echo "no user ";
-			return false;
-		};
+	    foreach($users as $user){
 	    
-	    echo "no user ";
+	    	if($user["name"] == $username && $user["password"] == sha1($salt . $password)){
+	    	
+	    		session_start();
+	        	
+	        	$_SESSION['username'] = $username;
+	        	$_SESSION['password'] = sha1($salt . $password);
+	        	
+	        	return true;
+	        	
+	        }else if($user["name"] == $username){
+	        
+	        	echo "password ";
+	        	return false;
+	        };
+	    };
+	    
 	    return false;
 	    
 	};
@@ -62,7 +53,7 @@
 		global $dbConnection;
 		
 		
-		foreach($dbConnection->playability->codes->find(array("code" => $code)) as $bcode){
+		foreach($dbConnection->authtest->codes->find(array("code" => $code)) as $bcode){
 		
 			if($bcode['code'] == $code){
 				
@@ -77,13 +68,13 @@
 	};
 	
 	
-	function addUser($username, $password, $email, $first){
+	function addUser($username, $password, $email){
 	
 		global $dbConnection;
 		
 		global $code;
 		
-	    $salt = 'abcdzak123';
+	    $salt = 'voDeaFWckErOPPGwiapYBwEoc4O2d1M60m2QsYc7A15PUshrLafkljzilLILIDFlIJSFildidjLIDSjsdmoVioG1wUmEgF';
 	
 	    $username = preg_replace('/\r|\n|\:/', '', $username);
 	
@@ -94,14 +85,14 @@
 	    	return false;
 	    };
 	    
-	    foreach($dbConnection->playability->users->find(array('name' => $username)) as $user){
+	    foreach($dbConnection->authtest->users->find(array('name' => $username)) as $user){
 			if($user['name']==$username){
 				echo "name ";
 				return false;
 			};
 		};
 		
-		foreach($dbConnection->playability->users->find(array('email' => $email)) as $user){
+		foreach($dbConnection->authtest->users->find(array('email' => $email)) as $user){
 		
 			if($user['email']==$email){
 				echo "email ";
@@ -109,8 +100,8 @@
 			};
 		};
 		
-		$dbConnection->playability->users->insert(array('name' => $username, 'password' => $password, 'email' => $email));
-		$dbConnection->playability->codes->remove(array("code" => $code));
+		$dbConnection->authtest->users->insert(array('name' => $username, 'password' => $password, 'email' => $email));
+		$dbConnection->authtest->codes->remove(array("code" => $code));
 		
 		return true;
 		
